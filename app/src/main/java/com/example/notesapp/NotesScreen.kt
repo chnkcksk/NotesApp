@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 
 class NotesScreen : AppCompatActivity() {
@@ -21,6 +22,12 @@ class NotesScreen : AppCompatActivity() {
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        val noteAddBtn = findViewById<FloatingActionButton>(R.id.noteAddBtn)
+        noteAddBtn.setOnClickListener{
+            val intent = Intent(this, NoteAddScreen::class.java)
+            startActivity(intent)
+        }
 
     }
 }
